@@ -22,7 +22,7 @@ const Navbarr = () => {
 
       <NavbarContent className="sm:hidden pr-3" justify="center">
         <NavbarBrand>
-          <p className="font-bold text-white">BecaShop!</p>
+          <p className="font-bold text-white"><a href="/">BecaShop!</a></p>
         </NavbarBrand>
       </NavbarContent>
 

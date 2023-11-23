@@ -39,7 +39,7 @@ const Register = () => {
       </Formik>
       <ContainerOpciones>
           <ListaOpciones>
-            <Opciones>Ya tengo una cuenta</Opciones>
+            <Opciones><a href="/login">Ya tengo una cuenta</a></Opciones>
           </ListaOpciones>
         </ContainerOpciones>
       </ContainerLogin>

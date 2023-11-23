@@ -61,7 +61,7 @@ const Login = () => {
               ¿Olvidaste tu contraseña?
             </Opciones>
             <Opciones>
-              ¿No tenes una cuenta? Registrate!
+              <a href="/register">¿No tenes una cuenta? Registrate!</a>
             </Opciones>
             
           </ListaOpciones>

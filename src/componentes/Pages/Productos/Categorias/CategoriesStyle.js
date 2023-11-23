@@ -9,6 +9,10 @@ export const CategoriasContainer = styled.div`
       margin-top: -10px;
      margin-left: 65px;
     } 
+    @media  (max-width:420px) {
+      justify-content: center;
+
+    }
 `;
 
 export const CardCategorias = styled.div`
@@ -52,6 +56,7 @@ background-color:none;
 display:flex;
 justify-content:center;
 margin-bottom:20px;
+
 h3 {
   cursor:pointer;
 }
@@ -173,11 +178,15 @@ display:flex;
 justify-content:flex-end;
 width:50%;
 margin-top:-20px;
-transition: 1s;
+ transform:translateX(220%);
+      transition: all .3s ease;
+&.open {
+      transform: translateX(0);
+   }
 `;
 export const CarritoContainer = styled.div`
 position:fixed;
-display: ${({ isVisible }) => (isVisible ? 'flex' : 'none')};
+display: flex;
 flex-direction:column;
 align-items:center;
   border-radius:20px 0px 0px 20px;
@@ -198,10 +207,16 @@ align-items:center;
   margin-left:-80%;
 }
 .FcFullTrash{
-   font-size:34px;
+   font-size:28px;
+   color: white;
    cursor:pointer;
    align-self:center;
  }
+
+.carrito-entrada {
+  transform: translate(200%);
+  transition: all .4s ease;
+}
 `;
 export const TittleCart = styled.div`
 display:flex;

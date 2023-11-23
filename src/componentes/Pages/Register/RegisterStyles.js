@@ -8,7 +8,7 @@ export const ContainerLogin = styled.div`
     justify-content:start;
     align-item:center;
     margin-top:12px;
-    width:40%;
+    width:300px;
     height:490px;
     background: #9363B6;
     background: linear-gradient(315deg, #9363B6, #9F22B2);

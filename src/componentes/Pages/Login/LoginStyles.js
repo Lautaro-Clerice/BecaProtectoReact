@@ -5,10 +5,11 @@ export const ContainerLogin = styled.div`
     font-family: ${customFont};
     display:flex;
     flex-direction:column;
-    justify-content:start;
+    justify-content:center;
     align-item:center;
-    margin-top:80px;
-    width:35%;
+    margin-top:40px;
+    margin-bottom: 40px;
+    width:300px;
     height:400px;
     background: #9363B6;
     background: linear-gradient(315deg, #9363B6, #9F22B2);
@@ -76,7 +77,7 @@ export const ContainerContraseña = styled.div`
 `
 export const StyleOjo = styled.div`
     position:absolute;
-    margin-left:50%;
+    margin-left:250px;
     color:white;
     font-size:20px;
     cursor:pointer;
@@ -102,9 +103,9 @@ export const ContainerOpciones = styled.div`
 `
 export const ListaOpciones = styled.ul`
     display:flex;
-;
     width:100%;
     justify-content:space-around;
+    margin-left: 20px;
 `
 export const Opciones = styled.li`
     color:white;

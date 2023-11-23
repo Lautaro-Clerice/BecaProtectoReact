@@ -5,6 +5,7 @@ export const IconoCartContainer = styled.div`
 width: 100%;
 
 `
+
 export const LinkCarrito = styled.div `
 display: flex;
 justify-content:center;

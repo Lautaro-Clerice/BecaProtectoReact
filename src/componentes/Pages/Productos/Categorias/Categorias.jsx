@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {CategoriasContainer, TituloCategoria } from './CategoriesStyle'
 import { Category } from "./Category"
 import { ContainerProduct, Productos, productos } from '../ListaProductos'
@@ -8,12 +8,13 @@ import IconoCart from '../Carrito/IconoCart'
 
 
 const Categorias = () => {
+  const [hiddenCart, setHiddenCart] = useState(true);
   return (
     
     <>
     <TituloCategoria>
         <h2>Nuestras Categorias</h2>
-        <IconoCart/>
+        <IconoCart hiddenCart = {hiddenCart} setHiddenCart={setHiddenCart}/>
     </TituloCategoria>
     <CategoriasContainer>
     {
