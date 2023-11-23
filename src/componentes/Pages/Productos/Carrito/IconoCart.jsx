@@ -96,6 +96,7 @@ export const IconoCart = () => {
             <h3>${!cartItems.length ? 0 : subtotalPrice + SHIPPING_COST}</h3>
           </TotalStyle>
         </ContainerPrice>
+        <Button className='btn-compra' color='secondary'>Iniciar pedido</Button>
       </CarritoContainer>
       </CarritoPadre>
       </AnimatePresence>

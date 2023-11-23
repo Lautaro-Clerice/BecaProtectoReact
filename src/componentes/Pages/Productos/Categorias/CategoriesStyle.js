@@ -212,7 +212,9 @@ align-items:center;
    cursor:pointer;
    align-self:center;
  }
-
+ .btn-compra {
+  margin-top: -10px;
+ }
 .carrito-entrada {
   transform: translate(200%);
   transition: all .4s ease;

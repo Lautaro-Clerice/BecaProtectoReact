@@ -17,7 +17,12 @@ export const HeroContainerStyle = styled.div`
     }
     width:100%;
 `;
-
+export const ImageHeroContainer = styled.div `
+width: 100%;
+overflow: hidden;
+justify-content: center;
+display: flex;
+`
 export const MateStyle = styled.div`
     border-radius:7px;
     width: 250px;

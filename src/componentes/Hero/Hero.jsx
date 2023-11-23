@@ -1,11 +1,12 @@
 import React from 'react'
 import {motion} from "framer-motion"
-import { CocinaStyle, HeroContainerStyle, MateStyle, PijamasStyle } from './StyleHero'
+import { CocinaStyle, HeroContainerStyle, ImageHeroContainer, MateStyle, PijamasStyle } from './StyleHero'
 import { Button, Image } from '@nextui-org/react';
 import imgCarousel from "../Img/Carousel.png"
 const Hero = () => {
   return(
   <>
+  <ImageHeroContainer>
   <Image
       isBlurred
       height={900}
@@ -14,6 +15,7 @@ const Hero = () => {
       alt="NextUI Album Cover"
       classNames="m-5"
     />
+    </ImageHeroContainer>
   <HeroContainerStyle>
   <motion.button whileHover={{ scale: 1.04 }}
       whileTap={{ scale: .97 }}>

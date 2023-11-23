@@ -8,6 +8,9 @@ const Layout = ({children}) => {
       <Navbarr/>
         {children}
       <Footer />
+      <address className='mt-2 italic font-semibold'>
+        Creado por Lautaro Clerice
+      </address>
     </LayoutCompleto>
 
   )
