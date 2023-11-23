@@ -19,6 +19,7 @@ export const HeroContainerStyle = styled.div`
 `;
 
 export const MateStyle = styled.div`
+    border-radius:7px;
     width: 250px;
     background-size: cover;
     height: 300px;
@@ -35,6 +36,7 @@ export const MateStyle = styled.div`
 export const PijamasStyle = styled.div`
     width: 250px;
     background-image: url(${imgPantuflas});
+    border-radius:7px;
     background-position: 0% 50%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -48,6 +50,7 @@ export const PijamasStyle = styled.div`
 `;
 
 export const CocinaStyle = styled.div`
+border-radius:7px;
     width: 250px;
     text-align: center;
     background-image: url(${imgCocina});
