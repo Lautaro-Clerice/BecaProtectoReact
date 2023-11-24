@@ -1,13 +1,26 @@
 import React from 'react'
-import {Accordion, AccordionItem} from "@nextui-org/react";
-import { ParrafoTitulo, PreguntasFrecuentesContainer } from './PreguntasFrecuentesStyles';;
+import img from "../../Img/BecaShop.png"
+import {Accordion, AccordionItem, Button} from "@nextui-org/react";
+import { ImgInfo, InfoContainer, ParrafoTitulo, PreguntasFrecuentesContainer, TextoInfo } from './PreguntasFrecuentesStyles';;
 const PreguntasFrecuentes = () => {
     return (
         <>
-        <ParrafoTitulo>
-            Revisa las preguntas que recibimos a diario.
-        </ParrafoTitulo>
+
+        <InfoContainer>
+          <ImgInfo>
+          <img src={img} alt="becashop" />
+          </ImgInfo>
+          <TextoInfo>
+            <h2>Quienes somos</h2>
+            <p>Desde nuestro inicio en 2021, en BecaShop nos hemos dedicado a ofrecerte lo mejor en diseño y decoración de interiores. Somos un equipo apasionado que entiende la importancia de convertir tu hogar en un espacio único.
+            <a href="/contacto"><Button className='btn'>Mas info</Button></a>
+            </p>
+          </TextoInfo>
+        </InfoContainer>
         <PreguntasFrecuentesContainer>
+          <ParrafoTitulo>
+            <h2>Preguntas Frecuentes</h2>
+          </ParrafoTitulo>
         <Accordion isCompact>
           <AccordionItem key="1" aria-label="Accordion 1" title="-Como hago un pedido?">
           Para hacer le pedido podes dirigirte a nuestro whatsapp, pulsando el boton con el icono de la aplicacion en la parte inferior derecha.<br/>

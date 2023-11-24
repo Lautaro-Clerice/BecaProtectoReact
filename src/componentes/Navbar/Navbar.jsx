@@ -44,7 +44,7 @@ const Navbarr = () => {
         </NavbarItem>
         <NavbarItem className='mr-[10px]'>
           <Link className='text-white' href="/preguntas-frecuentes">
-            Preguntas Frecuentes
+            Sobre nosotros
           </Link>
         </NavbarItem>
       </NavbarContent>

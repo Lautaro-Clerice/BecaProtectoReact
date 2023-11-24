@@ -44,6 +44,7 @@ const Hero = () => {
           
 
   </HeroContainerStyle>
+  <a href="/preguntas-frecuentes"><Button color='secondary' className='mb-10'>Mas info</Button></a>
   </>
   )
 }

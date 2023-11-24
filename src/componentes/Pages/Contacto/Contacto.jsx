@@ -32,6 +32,7 @@ export const Contactos = () => {
           <Input name="surname" label="Apellido" type="text" />
           <Input name="age" label="Edad" type="number" />
           <Input name="email" label="Mail" type="email" />
+          <textarea placeholder='Escriba su mensaje aca'></textarea>
           <BtnForm>Enviar</BtnForm>
         </StyledForm>
       </Formik>
