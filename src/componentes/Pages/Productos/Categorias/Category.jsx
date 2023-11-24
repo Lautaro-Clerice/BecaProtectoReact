@@ -1,7 +1,7 @@
 import React from 'react';
 import { CardCategorias, CategoriasContainer, ImgStyle,  } from './CategoriesStyle';
 import { Button } from '@nextui-org/react';
-export const Category = ({ tittle, category,img }) => {
+export const Category = ({ tittle, category,img,  onCategoriaClick }) => {
   return (
     <>
     <CategoriasContainer>
@@ -9,7 +9,7 @@ export const Category = ({ tittle, category,img }) => {
       <CardCategorias>
       <ImgStyle src={img} alt={img} />  
       </CardCategorias>
-      <Button className="tituloCat" color="secondary" variant="ghost">
+      <Button  onClick={() => onCategoriaClick(category)} className="tituloCat" color="secondary" variant="ghost">
         {tittle}
       </Button>
       </label>

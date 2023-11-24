@@ -9,6 +9,20 @@ import IconoCart from '../Carrito/IconoCart'
 
 const Categorias = () => {
   const [hiddenCart, setHiddenCart] = useState(true);
+  const [filtroCategoria, setFiltroCategoria] = useState(null);
+
+  const handleFiltroCategoriaChange = (categoria) => {
+    setFiltroCategoria(categoria !== filtroCategoria ? categoria : null);
+  };
+  
+  
+  const productosFiltrados = productos.filter(producto => producto.categoria === filtroCategoria);
+  const productosFiltradosObjet = Object.entries(Productos).flatMap(([, foods]) =>
+  filtroCategoria
+    ? foods.filter((food) => food.category === filtroCategoria)
+    : foods
+);
+
   return (
     
     <>
@@ -22,6 +36,7 @@ const Categorias = () => {
             return <Category
             key={category.id}
                 {...category}
+                onCategoriaClick={handleFiltroCategoriaChange}
             />
         })
     }
@@ -30,13 +45,9 @@ const Categorias = () => {
         <h2>Productos</h2>
     </TituloCategoria>
     <ContainerProduct>
-      {
-      Object.entries(Productos).map(([, foods]) => {
-        return foods.map((food) => {
-          return <MaquetadoProducts {...food} key={food.id} />;
-        })
-      })
-      }
+    {productosFiltradosObjet.map((producto) => (
+        <MaquetadoProducts {...producto} key={producto.id} />
+      ))}
     </ContainerProduct>
       </>
   )

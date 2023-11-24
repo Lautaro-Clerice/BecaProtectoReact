@@ -20,14 +20,14 @@ export const categorias = [
     },
     {
       id: 4,
-      tittle: 'Cocina',
-      category: 'Cocina',
+      tittle: 'Mates',
+      category: 'Mates',
       img: "https://res.cloudinary.com/dn6dmzeqq/image/upload/v1700195898/set_matero_vibra_alto_1_oh5itf.jpg"
     },
     {
       id: 5,
       tittle: 'Pantuflas',
-      category: 'Pantuflas',
+      category: 'Pantus',
       img:"https://res.cloudinary.com/dn6dmzeqq/image/upload/v1700195898/pantus_gatito_1_m48x7u.jpg"
     },
   ];

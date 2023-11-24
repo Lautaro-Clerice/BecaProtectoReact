@@ -5,7 +5,7 @@ import { addToCart } from "./Carrito/CartSlice";
 import {Button} from "@nextui-org/react";
 import { motion } from 'framer-motion';
 
-export const MaquetadoProducts = ({nombre, desc, precio,img, id}) => {
+export const MaquetadoProducts = ({nombre, desc, precio,img, id, category}) => {
   const dispatch = useDispatch();
 
   return (
