@@ -1,83 +1,49 @@
-import React from 'react'
-import {Navbar, NavbarBrand, NavbarMenuToggle, NavbarMenuItem, NavbarMenu, NavbarContent, NavbarItem, Link, Button} from "@nextui-org/react";
+import React, { useState } from 'react'
+import { LogoStyles, NavbarContainer, NavbarOptions, NavbarPadre } from './navbarStyles'
+import { IoBagHandleOutline } from "react-icons/io5";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { IoIosClose } from "react-icons/io";
+import { LuSend } from "react-icons/lu";
+import { IoCodeWorkingOutline } from "react-icons/io5";
+import { MdAttachMoney } from "react-icons/md";
+import { IoPersonOutline } from "react-icons/io5";
+import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import {setCurrentUser} from '../../Redux/User/UserSlice'
+
+
+
 const Navbarr = () => {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const currentUser = useSelector((state) => state.user.currentUser);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false)
+  return (
+    <NavbarPadre>
+        <NavbarContainer>
+            <LogoStyles>
+                <h2>BecaTemplates</h2>
+            </LogoStyles>
+            <NavbarOptions className={ isOpen ? 'open' : ''}>
+                <ul>
+                    <li><LuSend className='iconNavbar'/>Contacto</li>
+                    <li><IoCodeWorkingOutline className='iconNavbar'/>Nuestros Trabajos</li>
+                    <li><MdAttachMoney className='iconNavbar'/>Planes</li>
+                    <li><IoPersonOutline className='iconNavbar'/>Sobre nosotros</li>
+                </ul>
+                <button><IoBagHandleOutline className='IoBagHandleOutline'/>
+                <Link to="/login">
+                  <span>
+                    {currentUser ? currentUser.nombre : 'Iniciar Sesion'}
+                  </span>
+                </Link>
+                </button>
+                <IoIosClose className='IoIosClose' onClick={() => setIsOpen(false)}/>
 
-  const menuItems = [
-    "Productos",
-    "Contacto",
-    "Preguntas-frecuentes",
-  ];
-
-  return( <>
-    <Navbar
-    className='bg-[#9319fd85]'
-      isBordered
-      isMenuOpen={isMenuOpen}
-      onMenuOpenChange={setIsMenuOpen}
-    >
-      <NavbarContent className="sm:hidden" justify="start">
-        <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
-      </NavbarContent>
-
-      <NavbarContent className="sm:hidden pr-3" justify="center">
-        <NavbarBrand>
-          <p className="font-bold text-white"><a href="/">BecaShop!</a></p>
-        </NavbarBrand>
-      </NavbarContent>
-
-      <NavbarContent className="hidden sm:flex gap-4 w-[100%]" justify="center">
-        <NavbarBrand>
-          <Link className='text-white font-bold' href='/'>
-            BecaShop!
-          </Link>
-        </NavbarBrand>
-        <NavbarItem>
-          <Link className='text-white' href="/productos">
-            Productos
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link className='text-white' href="/contacto" aria-current="page">
-            Contacto
-          </Link>
-        </NavbarItem>
-        <NavbarItem className='mr-[10px]'>
-          <Link className='text-white' href="/preguntas-frecuentes">
-            Sobre nosotros
-          </Link>
-        </NavbarItem>
-      </NavbarContent>
-
-      <NavbarContent justify="end">
-        <NavbarItem className=" lg:flex">
-          <Link href="/login" className='text-white'>Ingresar</Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Button as={Link} className='text-white' color="secondary" href="/register" variant="flat">
-            Registrate
-          </Button>
-        </NavbarItem>
-      </NavbarContent>
-
-      <NavbarMenu>
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
-            <Link
-              className="w-full"
-              color={
-                index === 2 ? "warning" : index === menuItems.length - 1 ? "danger" : "foreground"
-              }
-              href={item}
-              size="lg"
-            >
-              {item}
-            </Link>
-          </NavbarMenuItem>
-        ))}
-      </NavbarMenu>
-    </Navbar>
-  </>
+            </NavbarOptions>
+            <RxHamburgerMenu className='RxHamburgerMenu ' onClick={() => setIsOpen(!isOpen)}/>
+        </NavbarContainer>
+    </NavbarPadre>
   )
 }
 
