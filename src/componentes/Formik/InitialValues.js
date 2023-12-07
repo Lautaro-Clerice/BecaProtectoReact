@@ -8,3 +8,10 @@ export const initialValues = {
     passwordRepeat:"",
 
   }
+
+
+export const registerInitialValues = {
+  name: '',
+  email: '',
+  password: '',
+};

@@ -10,34 +10,47 @@ import {
   Opciones,
   TittleLogin,
 } from './RegisterStyles';
-import { Formik } from 'formik';
-import { initialValues } from '../../Formik/InitialValues';
-import { validationschema } from '../../Formik/ValidationScheema';
+import { Formik, Form } from 'formik';
+import { registerInitialValues } from '../../Formik/InitialValues';
+import { registerValidationScheema } from '../../Formik/ValidationScheema';
 import InputRegister from './InputRegister';
+import {createUser} from "../../../Axios/Axios-User"
+import { useNavigate } from 'react-router-dom';
+
 const Register = () => {
+  const navigate = useNavigate();
   return (
     <>
       <ContainerLogin>
         <ImgLogoLogin src={beca} />
         <TittleLogin>Registrate!</TittleLogin>
-      <Formik
-        initialValues={initialValues}
-        validationSchema={validationschema}
-        onSubmit={(values, { resetForm }) => {
-          console.log(values);
-          resetForm();
-        }}
-      >
-        <ContainerForm>
-          <InputRegister name="name" placeholder="Nombre de usuario" type="text" />
-          <InputRegister name="phone" placeholder="Telefono" type="text" />
-          <InputRegister name="email" placeholder="Email" type="Email" />
-          <InputRegister name="password" placeholder="Contraseña"  type="text" />
-          <InputRegister name="passwordRepeat" placeholder="Repeti tu contraseña"  type="text" />
-          <BtnStyled>Registrarme</BtnStyled>
-        </ContainerForm>
-      </Formik>
-      <ContainerOpciones>
+        <Formik
+          initialValues={registerInitialValues}
+          validationSchema={registerValidationScheema}
+          onSubmit={ async (values, actions) => {
+            try {
+              const user = await createUser(values.name, values.email, values.password);
+              console.log(user);
+              actions.resetForm();
+              if(user) {
+                navigate("/login")
+              }
+            } catch (error) {
+              console.error("Error creating user:", error);
+            }
+          }}
+        >
+          <Form>
+            <ContainerForm>
+              <InputRegister name="name" placeholder="Nombre de usuario" type="text" />
+              <InputRegister name="email" placeholder="Email" type="email" />
+              <InputRegister name="password" placeholder="Contraseña" type="password" />
+
+              <BtnStyled type="submit">Registrarme</BtnStyled>
+            </ContainerForm>
+          </Form>
+        </Formik>
+        <ContainerOpciones>
           <ListaOpciones>
             <Opciones><a href="/login">Ya tengo una cuenta</a></Opciones>
           </ListaOpciones>

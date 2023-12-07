@@ -29,7 +29,7 @@ export const TittleLogin = styled.h2`
     color: white;
     font-weight:400;
 `;
-export const ContainerForm = styled.form`
+export const ContainerForm = styled.div`
     width:90%;
     height:190px;
     margin-left:5%;
