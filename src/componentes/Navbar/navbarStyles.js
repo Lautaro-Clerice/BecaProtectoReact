@@ -66,11 +66,11 @@ export const NavbarOptions = styled.div`
     li {
         cursor: pointer;
         list-style: none;
-        color: #d4dadf;
+        color: white;
         transition: 0.4s;
 
         &:hover {
-            color: #fff;
+            transform: scale(1.07);
         }
     }
 
@@ -79,12 +79,12 @@ export const NavbarOptions = styled.div`
         border: none;
         width: 120px;
         height: 40px;
-        background-color: white;
-        color: #006ECC;
+        background-color: #9319fd85;
+        color: #fff;
         font-size: 14px;
         font-weight: 600;
         transition: 0.3s;
-
+        z-index: 2000000;
         &:hover {
             background-color: #006ECC;
             color: #fff;

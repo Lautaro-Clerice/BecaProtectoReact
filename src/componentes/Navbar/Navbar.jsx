@@ -22,21 +22,23 @@ const Navbarr = () => {
     <NavbarPadre>
         <NavbarContainer>
             <LogoStyles>
-                <h2>BecaTemplates</h2>
+                <h2><Link to="/">BecaShop</Link></h2>
             </LogoStyles>
             <NavbarOptions className={ isOpen ? 'open' : ''}>
                 <ul>
-                    <li><LuSend className='iconNavbar'/>Contacto</li>
-                    <li><IoCodeWorkingOutline className='iconNavbar'/>Nuestros Trabajos</li>
-                    <li><MdAttachMoney className='iconNavbar'/>Planes</li>
-                    <li><IoPersonOutline className='iconNavbar'/>Sobre nosotros</li>
+                    <li><Link to="/contacto"><LuSend className='iconNavbar'/>Contacto</Link></li>
+                    <li><Link to="productos"><IoCodeWorkingOutline className='iconNavbar'/>Productos</Link></li>
+                    <li><Link to="preguntas-frecuentes"><MdAttachMoney className='iconNavbar'/>Preguntas Frecuentes</Link></li>
                 </ul>
-                <button><IoBagHandleOutline className='IoBagHandleOutline'/>
+                <button>
                 <Link to="/login">
                   <span>
                     {currentUser ? currentUser.nombre : 'Iniciar Sesion'}
                   </span>
                 </Link>
+                </button>
+                <button>
+                <Link to="/register"><MdAttachMoney className='iconNavbar'/>Registrate</Link>
                 </button>
                 <IoIosClose className='IoIosClose' onClick={() => setIsOpen(false)}/>
 

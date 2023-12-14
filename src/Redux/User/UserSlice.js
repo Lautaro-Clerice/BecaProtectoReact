@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const INITIAL_STATE = {
     currentUser: null,
-
+    hiddenMenu: true
 }
 
 const userSlice = createSlice({
@@ -15,6 +15,12 @@ const userSlice = createSlice({
                 ...state,
                 currentUser: action.payload
             }
+        },
+        setHiddenMenu: (state) => {
+            return {
+                ...state,
+                hiddenMenu: !state.hiddenMenu
+            }
         }
     }
 
@@ -22,7 +28,8 @@ const userSlice = createSlice({
 
 
 export const {
-    setCurrentUser
+    setCurrentUser,
+    setHiddenMenu
 } = userSlice.actions;
 
 export default userSlice.reducer;
