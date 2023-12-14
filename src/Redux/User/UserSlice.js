@@ -16,7 +16,7 @@ const userSlice = createSlice({
                 currentUser: action.payload
             }
         },
-        setHiddenMenu: (state) => {
+        toggleHiddenMenu: (state) => {
             return {
                 ...state,
                 hiddenMenu: !state.hiddenMenu
@@ -29,7 +29,7 @@ const userSlice = createSlice({
 
 export const {
     setCurrentUser,
-    setHiddenMenu
+    toggleHiddenMenu
 } = userSlice.actions;
 
 export default userSlice.reducer;

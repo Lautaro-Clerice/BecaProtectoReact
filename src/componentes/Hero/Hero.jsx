@@ -3,12 +3,10 @@ import {motion} from "framer-motion"
 import { CocinaStyle, HeroContainerStyle, ImageHeroContainer, MateStyle, PijamasStyle } from './StyleHero'
 import { Button, Image } from '@nextui-org/react';
 import imgCarousel from "../Img/Carousel.png"
-import ModalUser from "../Navbar/ModalUser/ModalUser"
 const Hero = () => {
   return(
   <>
   <ImageHeroContainer>
-    <ModalUser/>
   <Image
       isBlurred
       height={900}
