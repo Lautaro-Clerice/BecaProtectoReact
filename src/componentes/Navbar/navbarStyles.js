@@ -7,6 +7,30 @@ export const NavbarContainer = styled.div`
     justify-content: space-between;
     align-items: center;
     overflow: hidden;
+    button {
+        border-radius: 10px;
+        border: none;
+        width: 120px;
+        height: 40px;
+        background-color: #9319fd85;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+        transition: 0.3s;
+        z-index: 2000000;
+        &:hover {
+            background-color: #006ECC;
+            color: #fff;
+        }
+
+        .IoBagHandleOutline {
+            color: 006ECC;
+        }
+    }
+    .botonesSesion{
+        display:flex;
+        gap:15px;
+    }
     .IoIosClose {
         display: none;
     }
@@ -28,6 +52,11 @@ export const NavbarContainer = styled.div`
             font-size: 36px;
             border-radius: 10px;
             background-color: white;
+        }
+        button {
+            width:90px;
+            height:30px;
+            font-size: 11px;
         }
     }
 `;
@@ -72,31 +101,6 @@ export const NavbarOptions = styled.div`
         &:hover {
             transform: scale(1.07);
         }
-    }
-
-    button {
-        border-radius: 10px;
-        border: none;
-        width: 120px;
-        height: 40px;
-        background-color: #9319fd85;
-        color: #fff;
-        font-size: 14px;
-        font-weight: 600;
-        transition: 0.3s;
-        z-index: 2000000;
-        &:hover {
-            background-color: #006ECC;
-            color: #fff;
-        }
-
-        .IoBagHandleOutline {
-            color: 006ECC;
-        }
-    }
-    .botonesSesion{
-        display:flex;
-        gap:15px;
     }
     
     @media (max-width: 930px) {

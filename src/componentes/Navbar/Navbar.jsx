@@ -35,8 +35,10 @@ const Navbarr = () => {
                     <li><Link to="/contacto" onClick={closeMenu}><LuSend className='iconNavbar'/>Contacto</Link></li>
                     <li><Link to="productos" onClick={closeMenu}><IoCodeWorkingOutline className='iconNavbar'/>Productos</Link></li>
                     <li><Link to="preguntas-frecuentes" onClick={closeMenu}><MdAttachMoney className='iconNavbar'/>Preguntas Frecuentes</Link></li>
-                </ul>
-                <div className='botonesSesion'>
+                </ul>  
+                <IoIosClose className='IoIosClose' onClick={() => setIsOpen(false)}/>
+            </NavbarOptions>
+            <div className='botonesSesion'>
                   <button onClick={() =>
                     currentUser
                     ? dispatch(toggleHiddenMenu())
@@ -46,21 +48,7 @@ const Navbarr = () => {
                       {currentUser ? currentUser.nombre : 'Iniciar Sesion'}
                     </span>
                   </button>
-                  <div>
-                    {
-                      currentUser ? (
-                        null
-                      ) : (
-                        <button onClick={closeMenu}>
-                          <Link to="/register">Registrate</Link>
-                        </button>
-                      )
-                    }
-                  </div>
-                </div>  
-                <IoIosClose className='IoIosClose' onClick={() => setIsOpen(false)}/>
-
-            </NavbarOptions>
+                </div>
             <RxHamburgerMenu className='RxHamburgerMenu ' onClick={() => setIsOpen(!isOpen)}/>
         </NavbarContainer>
     </NavbarPadre>
