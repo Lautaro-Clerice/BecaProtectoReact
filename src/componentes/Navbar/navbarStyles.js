@@ -8,6 +8,9 @@ export const NavbarContainer = styled.div`
     align-items: center;
     overflow: hidden;
     button {
+        display:flex;
+        align-items:center;
+        justify-content: space-around;
         border-radius: 10px;
         border: none;
         width: 120px;
@@ -25,6 +28,13 @@ export const NavbarContainer = styled.div`
 
         .IoBagHandleOutline {
             color: 006ECC;
+        }
+        span{
+            display: flex;
+            justify-content:center;
+            gap: 10px;
+            width: 100%;
+            align-items:center;
         }
     }
     .botonesSesion{
@@ -54,9 +64,11 @@ export const NavbarContainer = styled.div`
             background-color: white;
         }
         button {
+            margin-right: 20px;
             width:90px;
             height:30px;
             font-size: 11px;
+            z-index: 1;
         }
     }
 `;

@@ -47,7 +47,7 @@ const Login = () => {
             }
         }}
       >
-        <ContainerForm>
+        <ContainerForm autoComplete="on">
               <InputRegister name="email" placeholder="Email" type="email" />
               <InputRegister name="password" placeholder="Contraseña" type="password" />
               <BtnStyled type='submit'>Ingresar</BtnStyled>

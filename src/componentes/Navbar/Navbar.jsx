@@ -9,7 +9,7 @@ import { Link, useNavigate} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {toggleHiddenMenu} from '../../Redux/User/UserSlice'
 import ModalUser from './ModalUser/ModalUser';
-
+import { FaUser } from "react-icons/fa";
 
 
 const Navbarr = () => {
@@ -45,11 +45,12 @@ const Navbarr = () => {
                     : (navigate('/login'), closeMenu())
                   }>
                     <span>
-                      {currentUser ? currentUser.nombre : 'Iniciar Sesion'}
+                      {currentUser ? (<><FaUser className='user'/> {currentUser.nombre}</>) : 'Iniciar Sesion'}
                     </span>
                   </button>
+                  <RxHamburgerMenu className='RxHamburgerMenu ' onClick={() => setIsOpen(!isOpen)}/>
                 </div>
-            <RxHamburgerMenu className='RxHamburgerMenu ' onClick={() => setIsOpen(!isOpen)}/>
+            
         </NavbarContainer>
     </NavbarPadre>
   )
