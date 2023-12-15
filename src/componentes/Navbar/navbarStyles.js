@@ -94,6 +94,10 @@ export const NavbarOptions = styled.div`
             color: 006ECC;
         }
     }
+    .botonesSesion{
+        display:flex;
+        gap:15px;
+    }
     
     @media (max-width: 930px) {
         z-index: 10000;
@@ -119,6 +123,7 @@ export const NavbarOptions = styled.div`
             flex-direction: column;
             align-items: start;
             width: 100%;
+            margin-left: 20px;
         }
 
         li {
@@ -130,7 +135,10 @@ export const NavbarOptions = styled.div`
         }
 
         button {
-            margin-left: 40px;
+            margin-left: 20px;
+        }
+        .botonesSesion{
+            margin-top: 40px;
         }
     }
 `;

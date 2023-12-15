@@ -7,7 +7,7 @@ import { IoCodeWorkingOutline } from "react-icons/io5";
 import { MdAttachMoney } from "react-icons/md";
 import { Link, useNavigate} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import {setCurrentUser, toggleHiddenMenu} from '../../Redux/User/UserSlice'
+import {toggleHiddenMenu} from '../../Redux/User/UserSlice'
 import ModalUser from './ModalUser/ModalUser';
 
 
@@ -17,6 +17,12 @@ const Navbarr = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false)
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
+
+
   return (
     <NavbarPadre>
         <NavbarContainer>
@@ -26,24 +32,32 @@ const Navbarr = () => {
             </LogoStyles>
             <NavbarOptions className={ isOpen ? 'open' : ''}>
                 <ul>
-                    <li><Link to="/contacto"><LuSend className='iconNavbar'/>Contacto</Link></li>
-                    <li><Link to="productos"><IoCodeWorkingOutline className='iconNavbar'/>Productos</Link></li>
-                    <li><Link to="preguntas-frecuentes"><MdAttachMoney className='iconNavbar'/>Preguntas Frecuentes</Link></li>
+                    <li><Link to="/contacto" onClick={closeMenu}><LuSend className='iconNavbar'/>Contacto</Link></li>
+                    <li><Link to="productos" onClick={closeMenu}><IoCodeWorkingOutline className='iconNavbar'/>Productos</Link></li>
+                    <li><Link to="preguntas-frecuentes" onClick={closeMenu}><MdAttachMoney className='iconNavbar'/>Preguntas Frecuentes</Link></li>
                 </ul>
-                <button>
-                <button onClick={() =>
-              currentUser
-                ? dispatch(toggleHiddenMenu())
-                : navigate('/login')
-                }>
-                  <span>
-                    {currentUser ? currentUser.nombre : 'Iniciar Sesion'}
-                  </span>
-                </button>
-                </button>
-                <button>
-                <Link to="/register"><MdAttachMoney className='iconNavbar'/>Registrate</Link>
-                </button>
+                <div className='botonesSesion'>
+                  <button onClick={() =>
+                    currentUser
+                    ? dispatch(toggleHiddenMenu())
+                    : (navigate('/login'), closeMenu())
+                  }>
+                    <span>
+                      {currentUser ? currentUser.nombre : 'Iniciar Sesion'}
+                    </span>
+                  </button>
+                  <div>
+                    {
+                      currentUser ? (
+                        null
+                      ) : (
+                        <button onClick={closeMenu}>
+                          <Link to="/register">Registrate</Link>
+                        </button>
+                      )
+                    }
+                  </div>
+                </div>  
                 <IoIosClose className='IoIosClose' onClick={() => setIsOpen(false)}/>
 
             </NavbarOptions>

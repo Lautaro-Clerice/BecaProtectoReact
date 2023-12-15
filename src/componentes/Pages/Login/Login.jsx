@@ -19,14 +19,15 @@ import InputRegister from '../Register/InputRegister';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import {setCurrentUser} from "../../../Redux/User/UserSlice"
+import {useRedirect} from "../../Hooks/UserRedirect"
 const Login = () => {
   const dispatch = useDispatch();
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
-
   }
+  useRedirect("/");
   return (
     <>
       <ContainerLogin>
