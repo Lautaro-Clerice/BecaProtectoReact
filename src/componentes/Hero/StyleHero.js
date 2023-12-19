@@ -22,6 +22,7 @@ width: 100%;
 overflow: hidden;
 justify-content: center;
 display: flex;
+margin-top:66px;
 `
 export const MateStyle = styled.div`
     border-radius:7px;

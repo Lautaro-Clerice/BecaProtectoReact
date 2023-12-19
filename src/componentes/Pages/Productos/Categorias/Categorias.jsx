@@ -4,11 +4,11 @@ import { Category } from "./Category"
 import { ContainerProduct, Productos, productos } from '../ListaProductos'
 import { MaquetadoProducts } from '../MaquetadoProductos'
 import { categorias } from './Categories'
-import IconoCart from '../Carrito/IconoCart'
+
 
 
 const Categorias = () => {
-  const [hiddenCart, setHiddenCart] = useState(true);
+  
   const [filtroCategoria, setFiltroCategoria] = useState(null);
 
   const handleFiltroCategoriaChange = (categoria) => {
@@ -28,7 +28,6 @@ const Categorias = () => {
     <>
     <TituloCategoria>
         <h2>Nuestras Categorias</h2>
-        <IconoCart hiddenCart = {hiddenCart} setHiddenCart={setHiddenCart}/>
     </TituloCategoria>
     <CategoriasContainer>
     {

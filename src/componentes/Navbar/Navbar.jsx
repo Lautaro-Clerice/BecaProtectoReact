@@ -10,13 +10,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import {toggleHiddenMenu} from '../../Redux/User/UserSlice'
 import ModalUser from './ModalUser/ModalUser';
 import { FaUser } from "react-icons/fa";
-
+import IconoCart from '../Pages/Productos/Carrito/IconoCart'
 
 const Navbarr = () => {
   const currentUser = useSelector((state) => state.user.currentUser);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false)
+  const [hiddenCart, setHiddenCart] = useState(true);
   const closeMenu = () => {
     setIsOpen(false);
   };
@@ -48,6 +49,7 @@ const Navbarr = () => {
                       {currentUser ? (<><FaUser className='user'/> {currentUser.nombre}</>) : 'Iniciar Sesion'}
                     </span>
                   </button>
+                  <IconoCart hiddenCart = {hiddenCart} setHiddenCart={setHiddenCart}/>
                   <RxHamburgerMenu className='RxHamburgerMenu ' onClick={() => setIsOpen(!isOpen)}/>
                 </div>
             

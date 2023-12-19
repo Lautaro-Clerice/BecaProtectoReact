@@ -44,7 +44,7 @@ h2 {
   font-weight: 600;
 }
   width: 100%;
-  margin-top:20px;
+  margin-top:100px;
   display: flex;
   justify-content: space-around;
 `
@@ -175,18 +175,22 @@ export const CarritoPadre = styled.div`
 position: fixed;
 z-index: 10000;
 display:flex;
-justify-content:flex-end;
-width:50%;
-margin-top:-20px;
- transform:translateX(220%);
-      transition: all .3s ease;
-&.open {
-      transform: translateX(0);
-   }
+justify-content:end;
+left: 0;
+width:100%;
+margin-top:63px;
+opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+
+    &.open {
+        opacity: 1;
+        transform: scale(1);
+    }
 `;
 export const CarritoContainer = styled.div`
 position:fixed;
-display: flex;
+display: flex;;
 flex-direction:column;
 align-items:center;
   border-radius:20px 0px 0px 20px;

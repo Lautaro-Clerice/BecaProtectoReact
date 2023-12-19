@@ -25,6 +25,7 @@ export const BtnForm = styled.button`
   width: 80px;
   height: 40px;
   border: none;
+  margin-bottom: 50px;
   box-shadow: 0px 0px 7px rgba(193, 85, 207, 0.8431372549);
   background-color: rgba(193, 85, 207, 0.2039215686);
   text-align: center;

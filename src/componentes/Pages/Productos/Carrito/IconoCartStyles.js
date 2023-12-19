@@ -10,10 +10,11 @@ export const LinkCarrito = styled.div `
 display: flex;
 justify-content:center;
 align-items: center;
-width:50px;
-height: 50px;
+width:40px;
+height: 40px;
 border-radius: 10px;
 background-color: #7e22ce86;
+margin-top: 10px;
 .iconBag {
     width: 30px;
     height:30px;

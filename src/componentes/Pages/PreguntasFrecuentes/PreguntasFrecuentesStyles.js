@@ -27,7 +27,7 @@ export const InfoContainer = styled.div`
     justify-content: center;
     width: 900px;
     flex-wrap: wrap;
-    margin-top: 40px;
+    margin-top: 100px;
     .btn {
         background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
         margin-top: 20px;

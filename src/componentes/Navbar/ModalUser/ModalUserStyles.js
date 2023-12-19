@@ -14,6 +14,7 @@ export const ModalContainer = styled(motion.div)`
     top: 65px;
     background-color: white;
     border:1px solid #e7c6ff;
+    position:fixed;
     hr {
         align-self: center;
         width: 90%;

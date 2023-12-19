@@ -8,7 +8,7 @@ export const ContainerLogin = styled.div`
     flex-direction:column;
     justify-content:center;
     align-item:center;
-    margin-top:40px;
+    margin-top:100px;
     margin-bottom: 40px;
     width:300px;
     height:400px;

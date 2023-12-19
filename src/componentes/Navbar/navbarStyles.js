@@ -40,6 +40,7 @@ export const NavbarContainer = styled.div`
     .botonesSesion{
         display:flex;
         gap:15px;
+        align-items: center;
     }
     .IoIosClose {
         display: none;
@@ -77,9 +78,11 @@ export const NavbarPadre = styled.div`
     width: 100%;
     display: flex;
     justify-content: center;
-    background-color: #9319fd85;
+    background-color: #ba6bff;
     overflow: hidden;
     border-bottom: 1px solid white;
+    position:fixed;
+    z-index:1000;
 `;
 
 export const LogoStyles = styled.div`
@@ -88,7 +91,7 @@ export const LogoStyles = styled.div`
 `;
 
 export const NavbarOptions = styled.div`
-    width: 70%;
+    width: 75%;
     display: flex;
     align-items: center;
     justify-content: space-between;
