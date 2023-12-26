@@ -8,7 +8,13 @@ export const initialValues = {
     passwordRepeat:"",
 
   }
-
+  export const checkoutInitialValues = {
+    name: '',
+    cellphone: '',
+    location: '',
+    address: '',
+  };
+  
 
 export const registerInitialValues = {
   name: '',

@@ -6,19 +6,20 @@ import categoriesReducer from "../Redux/SliceCategorias"
 import productsReducer from "../componentes/Pages/Productos/ProductsSlice"
 import cartReducer from "../componentes/Pages/Productos/Carrito/CartSlice"
 import userReducer from "./User/UserSlice"
-
+import ordersReducer from "./Order/OrderSlice"
 
 const reducers = combineReducers({
    categories: categoriesReducer,
    products: productsReducer,
    cart: cartReducer,
-   user: userReducer
+   user: userReducer,
+   orders: ordersReducer,
 });
 
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['cart', 'user'],
+  whitelist: ['cart', 'user', 'orders'],
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers);

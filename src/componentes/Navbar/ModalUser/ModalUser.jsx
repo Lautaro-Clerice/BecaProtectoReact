@@ -6,11 +6,13 @@ import { setCurrentUser, toggleHiddenMenu } from '../../../Redux/User/UserSlice'
 import { useMediaQuery } from '@react-hook/media-query';
 import { IoBagOutline } from "react-icons/io5";
 import { IoExitOutline } from "react-icons/io5";
+import { useNavigate } from 'react-router-dom';
 
 
 const ModalUser = () => {
   const { currentUser, hiddenMenu } = useSelector(state => state.user);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const isScreenSmallerThan930px = useMediaQuery("(max-width: 930px)");
   return (
     <AnimatePresence>
@@ -34,7 +36,9 @@ const ModalUser = () => {
             {`Hola ${currentUser?.nombre} !`}
           </TittleModal>
             <hr />
-            <span><IoBagOutline className='iconPedido'/>Mis pedidos</span>
+            <span onClick={() => {navigate("/pedidos")
+            dispatch(toggleHiddenMenu())
+          }}><IoBagOutline className='iconPedido'/>Mis pedidos</span>
           <span onClick={() => {
             dispatch(setCurrentUser(null))
             dispatch(toggleHiddenMenu())

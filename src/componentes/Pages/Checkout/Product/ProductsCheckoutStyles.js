@@ -1,42 +1,5 @@
 import styled from 'styled-components';
 
-
-export const CategoriasContainer = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    .tituloCat{
-      margin-top: -10px;
-     margin-left: 65px;
-    } 
-    @media  (max-width:420px) {
-      justify-content: center;
-
-    }
-`;
-
-export const CardCategorias = styled.div`
-    display:flex;
-    justify-content: center;
-    align-items:center;
-    flex-direction: column;
-    width: 170px;
-    border-radius: 50%;
-    transition: 0.3s;
-    height: 170px;
-    margin: 20px;
-      &:hover {
-        border: 2px solid #7e22ce86;
-        scale: 1.05;
-  }
-`;
-
-export const ImgStyle = styled.img`
-  width: 160px;
-  height:160px;
-  border-radius: 50%;
-`
-
 export const TituloCategoria = styled.div`
 h2 {
   color: #7e22ce86 ;
@@ -48,19 +11,6 @@ h2 {
   display: flex;
   justify-content: space-around;
 `
-
-export const NavbarConteiner = styled.div`
-width:40px;
-height: 40px;
-background-color:none;
-display:flex;
-justify-content:center;
-margin-bottom:20px;
-
-h3 {
-  cursor:pointer;
-}
-`;
 
 export const CarritoStyled = styled.div`
   z-index: 1000000;
@@ -172,34 +122,27 @@ justify-content: center;
   margin:10px;
 `
 export const CarritoPadre = styled.div`
-position: fixed;
-z-index: 10000;
 display:flex;
-justify-content:end;
-left: 0;
-width:100%;
-margin-top:63px;
-visibility: hidden;
+justify-content: end;
+width:50%;
+margin-top:10px;
 opacity: 0;
-transform: scale(0.8);
-transition: visibility 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+    transform: scale(0.8);
+    transition: opacity 0.3s ease, transform 0.3s ease;
 
-&.open {
-    visibility: visible;
-    opacity: 1;
-    transform: scale(1);
-}
-
+    &.open {
+        opacity: 1;
+        transform: scale(1);
+    }
 `;
 export const CarritoContainer = styled.div`
-position:fixed;
 display: flex;;
 flex-direction:column;
 align-items:center;
   border-radius:20px 0px 0px 20px;
   background-color:#e4c1f9;
   width:400px;
- height:95vh;
+ height:85vh;
  transition: 1s;
  hr {
   margin-top:-5px;

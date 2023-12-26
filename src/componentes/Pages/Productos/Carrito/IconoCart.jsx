@@ -8,10 +8,12 @@ import { FaTrash } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
 import { clearCart } from './CartSlice';
 import { IoMdMenu } from 'react-icons/io';
-
+import {formatPrice} from "../../../Generales/Utils/FormatPrice"
 import { AnimatePresence } from 'framer-motion';
 import { Button, ScrollShadow, Tooltip } from '@nextui-org/react';
+import { useNavigate } from 'react-router-dom';
 export const IconoCart = () => {
+  const navigate =useNavigate();
   const dispatch = useDispatch();
   const [isOpen, setIsOpen] = useState(false);
   const {cartItems} = useSelector(state => state.cart)
@@ -82,21 +84,21 @@ export const IconoCart = () => {
         <ContainerPrice>
           <SubtotalStyle>
             <h3>Subtotal</h3>
-            <h3>${subtotalPrice}</h3>
+            <h3>${formatPrice(subtotalPrice)}</h3>
           </SubtotalStyle>
           <ShippingCostStyle>
             <h3>Envio</h3>
             <h3>$
-            {!cartItems.length ? 0 : SHIPPING_COST}
+            {!cartItems.length ? 0 : formatPrice(SHIPPING_COST)}
             </h3>
           </ShippingCostStyle>
           <hr/>
           <TotalStyle>
             <h3>Total</h3>
-            <h3>${!cartItems.length ? 0 : subtotalPrice + SHIPPING_COST}</h3>
+            <h3>${!cartItems.length ? 0 : formatPrice(subtotalPrice + SHIPPING_COST)}</h3>
           </TotalStyle>
         </ContainerPrice>
-        <Button className='btn-compra' color='secondary'>Iniciar pedido</Button>
+        <Button className='btn-compra' color='secondary' onClick={() => navigate('/checkout')}>Iniciar pedido</Button>
       </CarritoContainer>
       </CarritoPadre>
       </AnimatePresence>

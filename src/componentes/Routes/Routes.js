@@ -11,6 +11,8 @@ import PreguntasFrecuentes from '../Pages/PreguntasFrecuentes/PreguntasFrecuente
 import Login from '../Pages/Login/Login'
 import Register from '../Pages/Register/Register'
 import Categorias from '../Pages/Productos/Categorias/Categorias'
+import Pedidos from '../Navbar/ModalUser/MisPedidos/Pedidos'
+import Checkout from '../Pages/Checkout/Checkout'
 const Routes = () => {
   return (
     <>
@@ -22,7 +24,9 @@ const Routes = () => {
             <Route path='/Productos' element={<Categorias />} />
             <Route path='/Preguntas-Frecuentes' element={<PreguntasFrecuentes />} />
             <Route path='/Login' element={<Login />} />
+            <Route path='/pedidos' element={<Pedidos />} />
             <Route path='/Register' element={<Register />} />
+            <Route path='/Checkout' element={<Checkout />} />
             <Route path='*' element={<p>error</p>} />
         </ReactDomRoutes>
     </Layout>

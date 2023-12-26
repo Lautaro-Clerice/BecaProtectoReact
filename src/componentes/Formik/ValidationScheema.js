@@ -32,3 +32,10 @@ export const loginValidationScheema = Yup.object({
     .required('Este campo es obligatorio'),
   password: Yup.string().min(6, "Mínimo 6 caracteres").required("Este campo es obligatorio"),
 });
+
+export const checkoutValidationSchema = Yup.object({
+  name: Yup.string().required('Campo Requerido'),
+  cellphone: Yup.string().required('Campo Requerido'),
+  location: Yup.string().required('Campo Requerido'),
+  address: Yup.string().required('Campo Requerido'),
+});
