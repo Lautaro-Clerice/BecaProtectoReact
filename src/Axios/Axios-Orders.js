@@ -17,15 +17,13 @@ export const getOrders = async (dispatch, currentUser) => {
                     dispatch(fetchOrdersSuccess(orders.data.data))
                 }
         } catch (error) {
-            console.log(error);
-            dispatch(fetchOrdersFail(
-                "No hay ordenes"
-            ))
+          console.error(error.response);
+          dispatch(fetchOrdersFail("Error al obtener órdenes"));
         }
 }
 export const CreateOrder = async (order, dispatch, currentUser) => {
     try {
-      const response = await axios.post(`${BASE_URL}/orders`, order, {
+      const response = await axios.post(`${BASE_URL}orders`, order, {
         headers: {
           'x-token': currentUser.token,
         },

@@ -6,14 +6,14 @@ import { ButtonQuantity, ContainerProductCart, MasMenosCard, QuantityCart, Tittl
 import { useDispatch } from "react-redux"
 import { addToCart, removeFromCart } from '../Carrito/CartSlice';
 
-const ModalCart = ({img, precio, nombre, desc, id, quantity}) => {
+const ModalCart = ({img, price, title, desc, id, quantity}) => {
   const dispatch = useDispatch()
   return (
     <ContainerProductCart>
             <img src={img} />
         <TittleCardCart>
-            <h2>{nombre}</h2>
-            <p>{precio}</p>
+            <h2>{title}</h2>
+            <p>{price}</p>
         </TittleCardCart>
         <MasMenosCard>
             <ButtonQuantity
@@ -24,7 +24,7 @@ const ModalCart = ({img, precio, nombre, desc, id, quantity}) => {
             <p>{quantity}</p>
             </QuantityCart>
             <ButtonQuantity><IoIosAdd className='IoIosAdd' onClick={() =>
-            dispatch(addToCart({ img, nombre, desc, precio, id}))
+            dispatch(addToCart({ img, title, desc, price, id}))
           } /></ButtonQuantity>
         </MasMenosCard>
     </ContainerProductCart>

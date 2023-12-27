@@ -12,13 +12,17 @@ import {formatPrice} from "../../../Generales/Utils/FormatPrice"
 import { AnimatePresence } from 'framer-motion';
 import { Button, ScrollShadow, Tooltip } from '@nextui-org/react';
 import { useNavigate } from 'react-router-dom';
+
+
+
+
 export const IconoCart = () => {
   const navigate =useNavigate();
   const dispatch = useDispatch();
   const [isOpen, setIsOpen] = useState(false);
   const {cartItems} = useSelector(state => state.cart)
   const subtotalPrice = cartItems.reduce((acc, item) => {
-      return (acc += (item.precio * item.quantity))
+      return (acc += (item.price * item.quantity))
   },0)
   const totalCartItem = useSelector(state => state.cart.cartItems).reduce((acc,item) => (
     acc += item.quantity

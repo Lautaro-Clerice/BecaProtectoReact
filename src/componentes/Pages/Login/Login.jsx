@@ -20,6 +20,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import {setCurrentUser} from "../../../Redux/User/UserSlice"
 import {useRedirect} from "../../Hooks/UserRedirect"
+import { clearOrders } from '../../../Redux/Order/OrderSlice';
 const Login = () => {
   const dispatch = useDispatch();
   const [showPassword, setShowPassword] = useState(false);
@@ -44,6 +45,7 @@ const Login = () => {
                 {...user.usuario,
                 token: user.token}
               ))
+              dispatch(clearOrders());
             }
         }}
       >

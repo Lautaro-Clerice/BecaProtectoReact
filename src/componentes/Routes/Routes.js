@@ -13,6 +13,10 @@ import Register from '../Pages/Register/Register'
 import Categorias from '../Pages/Productos/Categorias/Categorias'
 import Pedidos from '../Navbar/ModalUser/MisPedidos/Pedidos'
 import Checkout from '../Pages/Checkout/Checkout'
+import ProtectecRoute from '../ProtectedRoutes/PortectecRoutes'
+
+
+
 const Routes = () => {
   return (
     <>
@@ -24,9 +28,19 @@ const Routes = () => {
             <Route path='/Productos' element={<Categorias />} />
             <Route path='/Preguntas-Frecuentes' element={<PreguntasFrecuentes />} />
             <Route path='/Login' element={<Login />} />
-            <Route path='/pedidos' element={<Pedidos />} />
+            <Route 
+            path='/pedidos' 
+            element={<ProtectecRoute redirectTo='/login'>  
+            <Pedidos />
+            </ProtectecRoute>} />
             <Route path='/Register' element={<Register />} />
-            <Route path='/Checkout' element={<Checkout />} />
+            <Route 
+            path='/Checkout' 
+            element={
+            <ProtectecRoute redirectTo='/login'>  
+            <Checkout />
+            </ProtectecRoute>
+            } />
             <Route path='*' element={<p>error</p>} />
         </ReactDomRoutes>
     </Layout>

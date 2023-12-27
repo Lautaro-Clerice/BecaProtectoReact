@@ -3,114 +3,114 @@ import styled from 'styled-components';
 export const productos = [
   {
     id: 1,
-    nombre: 'Tazon chanchito',
+    title: 'Tazon chanchito',
     desc: 'Descripción del Producto A',
     img: 'https://res.cloudinary.com/dn6dmzeqq/image/upload/v1700195899/tazon_chanchito_1_t5bn8t.jpg',
-    precio: 4500,
+    price: 4500,
     category: "Vasos"
   },
   {
     id: 2,
-    nombre: 'Taza ondulada',
+    title: 'Taza ondulada',
     desc: 'Descripción del Producto B',
     img: 'https://res.cloudinary.com/dn6dmzeqq/image/upload/v1700195899/taza_ondulada_vivi_el_hoyo_1_woyeiq.jpg',
-    precio: 3200,
+    price: 3200,
     category: "Vasos"
   },
   {
     id: 3,
-    nombre: 'Maceta llama',
+    title: 'Maceta llama',
     desc: 'Descripción del Producto C',
     img: 'https://res.cloudinary.com/dn6dmzeqq/image/upload/v1700195898/maceta_llama_1_ixyl65.jpg',
-    precio: 6750,
+    price: 6750,
     category: "Deco"
   },
   {
     id: 4,
-    nombre: 'Set matero vibras',
+    title: 'Set matero vibras',
     desc: 'Descripción del Producto D',
     img: 'https://res.cloudinary.com/dn6dmzeqq/image/upload/v1700195898/set_matero_vibra_alto_1_oh5itf.jpg',
-    precio: 16000,
+    price: 16000,
     category: "Mates"
   },
   {
     id: 5,
-    nombre: 'Set matero animal',
+    title: 'Set matero animal',
     desc: 'Descripción del Producto E',
     img: 'https://res.cloudinary.com/dn6dmzeqq/image/upload/v1700195898/set_de_mate_animal_print_1_qy8lhg.jpg',
-    precio: 16000,
+    price: 16000,
     category: "Mates"
   },
   {
     id: 6,
-    nombre: 'Pantu gato',
+    title: 'Pantu gato',
     desc: 'Descripción del Producto F',
     img: 'https://res.cloudinary.com/dn6dmzeqq/image/upload/v1700195898/pantus_gatito_1_m48x7u.jpg',
-    precio: 6500,
+    price: 6500,
     category: "Pantus"
   },
   {
     id: 7,
-    nombre: 'Pantu chancho',
+    title: 'Pantu chancho',
     desc: 'Descripción del Producto G',
     img: 'https://res.cloudinary.com/dn6dmzeqq/image/upload/v1700195898/pantus_chanchito_1_f1chwi.jpg',
-    precio: 6500,
+    price: 6500,
     category: "Pantus"
   },
   {
     id: 8,
-    nombre: 'Pantu Bob',
+    title: 'Pantu Bob',
     desc: 'Descripción del Producto H',
     img: 'https://res.cloudinary.com/dn6dmzeqq/image/upload/v1700195898/pantus_bob_1_afqt56.jpg',
-    precio: 6500,
+    price: 6500,
     category: "Pantus"
   },
   {
     id: 9,
-    nombre: 'Vaso negro',
+    title: 'Vaso negro',
     desc: 'Descripción del Producto I',
     img: 'https://res.cloudinary.com/dn6dmzeqq/image/upload/v1700195897/vaso_coffe_negro2_1_ezokjg.jpg',
-    precio: 2700,
+    price: 2700,
     category: "Vasos"
   },
   {
     id: 10,
-    nombre: 'Botella silicona',
+    title: 'Botella silicona',
     desc: 'Descripción del Producto J',
     img: 'https://res.cloudinary.com/dn6dmzeqq/image/upload/v1700195897/bot.silicona_violeta_1_z1ijob.jpg',
-    precio: 3200,
+    price: 3200,
     category: "Botellas"
   },
   {
     id: 11,
-    nombre: 'Vaso termico',
+    title: 'Vaso termico',
     desc: 'Descripción del Producto K',
     img: 'https://res.cloudinary.com/dn6dmzeqq/image/upload/v1700195897/vaso_termico_verede_aqua_1_etxrkt.jpg',
-    precio: 2700,
+    price: 2700,
     category: "Vasos"
   },
   {
     id: 12,
-    nombre: 'Vaso termico',
+    title: 'Vaso termico',
     desc: 'Descripción del Producto L',
     img: 'https://res.cloudinary.com/dn6dmzeqq/image/upload/v1700195897/Vaso_termico_rosado_1_a5arqr.jpg',
-    precio: 2700,
+    price: 2700,
     category: "Vasos"
   },
   {
     id: 13,
-    nombre: 'Vaso termico',
+    title: 'Vaso termico',
     desc: 'Descripción del Producto M',
     img: 'https://res.cloudinary.com/dn6dmzeqq/image/upload/v1700195897/vaso_termico_flores_1_pko5az.jpg',
-    precio: 2700,
+    price: 2700,
     category: "Vasos"
   },
   {
     id: 14,
-    nombre: 'Botella flores',
+    title: 'Botella flores',
     desc: 'Descripción del Producto N',
     img: 'https://res.cloudinary.com/dn6dmzeqq/image/upload/v1700195897/botella_con_tapa_flors_1_vcdhjn.jpg',
-    precio: 3200,
+    price: 3200,
     category: "Botellas"
   },
 ];
@@ -156,7 +156,7 @@ display: flex;
   }
 `;
 
-export const TittlePrice = styled.div`
+export const titlePrice = styled.div`
   display:flex;
   justify-content:space-around;
   width:100%;

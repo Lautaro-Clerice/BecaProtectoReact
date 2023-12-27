@@ -9,12 +9,12 @@ import {formatPrice} from "../../../Generales/Utils/FormatPrice"
 
 
 
-const ProductsCheckout = ({shippingCost, precio }) => {
+const ProductsCheckout = ({shippingCost, price }) => {
     const navigate =useNavigate();
   const dispatch = useDispatch();
   const {cartItems} = useSelector(state => state.cart)
   const subtotalPrice = cartItems.reduce((acc, item) => {
-      return (acc += (item.precio * item.quantity))
+      return (acc += (item.price * item.quantity))
   },0)
   const totalCartItem = useSelector(state => state.cart.cartItems).reduce((acc,item) => (
     acc += item.quantity

@@ -11,13 +11,13 @@ import {checkoutValidationSchema} from '../../../Formik/ValidationScheema'
 import {CreateOrder} from '../../../../Axios/Axios-Orders'
 import {clearCart} from "../../Productos/Carrito/CartSlice"
 
-const CheckoutForm = ({ cartItems, precio, shippingCost }) => {
+const CheckoutForm = ({ cartItems, price, shippingCost }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { currentUser } = useSelector(state => state.user);
 
   return (
-    <CheckoutDatosStyled>
+    <CheckoutDatosStyled>precio
       <h2>Ingresá tus datos</h2>
       <Formik
         initialValues={checkoutInitialValues}
@@ -25,28 +25,14 @@ const CheckoutForm = ({ cartItems, precio, shippingCost }) => {
         onSubmit={async values => {
           const orderData = {
             items: cartItems|| [],
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-            precio,
+            price,
             shippingCost,
-            total: precio + shippingCost,
+            total: price + shippingCost,
             shippingDetails: { ...values },
           };
           try {
             await CreateOrder(orderData, dispatch, currentUser);
-            navigate('/Home');
+            navigate('/pedidos');
             console.log(orderData);
             dispatch(clearCart());
           } catch (error) {

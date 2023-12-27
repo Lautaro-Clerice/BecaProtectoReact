@@ -6,8 +6,8 @@ import ProductsCheckout from './Product/ProductsCheckout';
 const Checkout = () => {
   const { cartItems, shippingCost } = useSelector(state => state.cart);
 
-  const precio = cartItems.reduce((acc, item) => {
-    return (acc += parseFloat(item.precio) * parseFloat(item.quantity));
+  const price = cartItems.reduce((acc, item) => {
+    return (acc += parseFloat(item.price) * parseFloat(item.quantity));
   }, 0);
   
 
@@ -16,12 +16,12 @@ const Checkout = () => {
         <CheckoutForm
           cartItems={cartItems}
           shippingCost={shippingCost}
-          precio={precio}
+          price={price}
         />
         <ProductsCheckout
           cartItems={cartItems}
           shippingCost={shippingCost}
-          precio={precio}
+          price={price}
         />
       </ContainerCheckoutStyled>
   );
